@@ -10,7 +10,7 @@ class ProcessServer(data.ProcessAPIServicer):
     def Execute(self, request_iterator, context):
         for req in request_iterator:
             print(f"Execute: {req}")
-            yield data.ProcessResponse(id=f'{req.name}:{req.version}')
+            yield data.Output(id=f'{req.name}:{req.version}')
 
 
 def main():
